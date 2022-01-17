@@ -14,6 +14,8 @@ db.mongoose
 .connect(db.url,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindandModify: true,
+    
 }).then(()=>{
     console.log('database connected!');
 }).catch((err)=>{
