@@ -22,6 +22,10 @@ db.mongoose
     console.log('cannot connect to the database'+ err);
     process.exit();
 });
+
+app.listen(process.env.PORT || 8000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 app.get('/',(req,res)=>{
     res.json({
         message:'welcome to mongo express api'
@@ -36,6 +40,3 @@ require('./app/routes/post.routes')(app)
 //     console.log('Server is running on http://localhost:8000');
 // })
 
-app.listen(process.env.PORT || 8000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
