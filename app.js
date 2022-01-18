@@ -29,7 +29,7 @@ db.mongoose
 
 app.get('/',(req,res)=>{
     res.json({
-        message:'welcome to express tutorial'
+        message:'welcome to mongo express api'
     })
 })
 
