@@ -35,7 +35,6 @@ app.get('/', (req, res) => {
   );
 });
 
-
 require('./app/routes/post.routes')(app)
 
 app.listen(port, () => {
