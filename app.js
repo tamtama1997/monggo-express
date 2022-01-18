@@ -23,14 +23,24 @@ db.mongoose
     process.exit();
 });
 
-app.listen(process.env.PORT || 8000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
-app.get('/',(req,res)=>{
-    res.json({
-        message:'welcome to mongo express api'
-    })
-})
+const port = process.env.PORT || 9000;
+app.get('/', (req, res) => {
+  res.json(
+    {
+      status: 'success',
+      data: null,
+      message: 'this server is running',
+      code: 200
+    },
+  );
+});
+
+
+// app.get('/',(req,res)=>{
+//     res.json({
+//         message:'welcome to mongo express api'
+//     })
+// })
 
 require('./app/routes/post.routes')(app)
 
@@ -39,4 +49,6 @@ require('./app/routes/post.routes')(app)
 // app.listen(PORT, ()=>{
 //     console.log('Server is running on http://localhost:8000');
 // })
-
+app.listen(port, () => {
+    console.log('server', `server up at ${port}`, 'listen server');
+  })
