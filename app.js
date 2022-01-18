@@ -1,5 +1,5 @@
 const express = require ('express');
-const cors = require('cors');
+// const cors = require('cors');
 
 const app = express()
 
@@ -23,10 +23,6 @@ db.mongoose
     process.exit();
 });
 
-
-
-
-
 app.get('/',(req,res)=>{
     res.json({
         message:'welcome to mongo express api'
@@ -35,7 +31,7 @@ app.get('/',(req,res)=>{
 
 require('./app/routes/post.routes')(app)
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 app.listen(PORT, ()=>{
     console.log('Server is running on http://localhost:8000');
