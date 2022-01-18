@@ -22,11 +22,10 @@ db.mongoose
     console.log('cannot connect to the database'+ err);
     process.exit();
 });
-console.log('ini masuk');
 app.get('/',(req,res)=>{
-    res.send(
-        'welcome to mongo express api'
-    )
+    res.json({
+        message:'welcome to mongo express api'
+    })
 })
 
 require('./app/routes/post.routes')(app)
