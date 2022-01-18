@@ -31,8 +31,12 @@ app.get('/',(req,res)=>{
 
 require('./app/routes/post.routes')(app)
 
-const PORT = process.env.PORT || 8000
+// const PORT = process.env.PORT || 8000
 
-app.listen(PORT, ()=>{
-    console.log('Server is running on http://localhost:8000');
-})
+// app.listen(PORT, ()=>{
+//     console.log('Server is running on http://localhost:8000');
+// })
+
+app.listen(process.env.PORT || 8000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
