@@ -22,7 +22,7 @@ db.mongoose
     console.log('cannot connect to the database'+ err);
     process.exit();
 });
-
+console.log('ini masuk');
 app.get('/',(req,res)=>{
     res.json({
         message:'welcome to mongo express api'
